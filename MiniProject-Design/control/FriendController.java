@@ -1,6 +1,7 @@
 package control;
 import model.Friend;
 import model.FriendContainer;
+import java.util.Iterator;
 /**
  *
  * @author (Matias, Jeppe, Oscar, Magnus, Kasper)
@@ -27,6 +28,18 @@ public class FriendController {
     // Find en ven ved navn
     public Friend findFriendByName(String name) {
         return friendContainer.findFriendByName(name);
+    }
+
+    //Find ven ved tlnr
+    public Friend findFriendByTlf(int tlf){
+        FriendContainer fc = FriendContainer.getInstance();
+        return fc.findFriendByTlf(tlf);
+    }
+
+    //Print all friends
+
+    public void printAllFriends(){
+        friendContainer.printAllFriends();
     }
 }
     

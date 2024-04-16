@@ -65,5 +65,6 @@ public class Friend {
         System.out.println("Postal Code: " + postalCode);
         System.out.println("City: " + city);
         System.out.println("Phone: " + phone);
+        System.out.println("");
     }
 }

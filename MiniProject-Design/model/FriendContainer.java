@@ -57,5 +57,10 @@ public class FriendContainer {
         return foundFriend;
     }
 
+    public void printAllFriends(){
+        for(Friend friend: friends){
+            friend.printFriendInfo();
+        }
+    }
 
 }
