@@ -1,7 +1,11 @@
 package model;
 
 import java.util.ArrayList;
-
+/**
+ *
+ * @author (Matias, Jeppe, Oscar, Magnus, Kasper)
+ * @version (16/04/2024)
+ */
 public class Loan {
     private int loanNumber;
     private String borrowDate;

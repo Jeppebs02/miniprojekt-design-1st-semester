@@ -1,6 +1,11 @@
 package control;
 import model.Friend;
 import model.FriendContainer;
+/**
+ *
+ * @author (Matias, Jeppe, Oscar, Magnus, Kasper)
+ * @version (16/04/2024)
+ */
 public class FriendController {
     private FriendContainer friendContainer;
 

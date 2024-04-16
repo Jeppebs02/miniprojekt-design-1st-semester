@@ -2,7 +2,11 @@ package model;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-
+/**
+ *
+ * @author (Matias, Jeppe, Oscar, Magnus, Kasper)
+ * @version (16/04/2024)
+ */
 public class LoanContainer {
     private ArrayList<Loan> loans;
     private static LoanContainer instance;

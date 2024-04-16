@@ -2,7 +2,11 @@ package model;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-
+/**
+ *
+ * @author (Matias, Jeppe, Oscar, Magnus, Kasper)
+ * @version (16/04/2024)
+ */
 public class FriendContainer {
     private ArrayList<Friend> friends;
     private static FriendContainer instance;
