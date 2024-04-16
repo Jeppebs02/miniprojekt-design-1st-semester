@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=FriendsMenu
+comment1.params=
+comment1.target=FriendsMenu()
+comment2.params=
+comment2.target=void\ start()
+comment3.params=
+comment3.target=void\ friendsMenu()
+comment4.params=
+comment4.target=int\ writeFriendsMenu()
+comment5.params=keyboard
+comment5.target=int\ getIntegerFromUser(java.util.Scanner)
+numComments=6

@@ -1,12 +1,10 @@
 package control;
-import model.Loan;
-import model.LoanContainer;
-import model.Copy;
 
+import model.*;
 
 public class LoanController {
     private LoanContainer loanContainer;
-
+    private FriendContainer friendContainer;
     public LoanController() {
         loanContainer = LoanContainer.getInstance();
     }
@@ -28,15 +26,16 @@ public class LoanController {
     }
 
     // Tilføj en kopi til et eksisterende lån
-    public boolean addCopyToLoan(Loan loan, Copy copy) {
-        // Implementer logikken for at tilføje en kopi til et eksisterende lån
-        
-        return false;
+    public boolean addCopyToLoan(int loanNumber, Copy copy) {
+        LoanContainer lc = LoanContainer.getInstance();
+        Loan loan = findLoanByLoanNumber(loanNumber);
+        return loan.addCopy(copy);
     }
 
     // Tilføj en ven til et eksisterende lån
-    public boolean addFriendToLoan(Friend friend) {
-        // Implementer logikken for at tilføje en ven til et eksisterende lån
-        return false;
+    public boolean addFriendToLoan(int loanNumber, Friend friend) {
+        LoanContainer lc = LoanContainer.getInstance();
+        Loan loan = findLoanByLoanNumber(loanNumber);
+        return loan.setFriend(friend);
     }
 }

@@ -8,7 +8,7 @@ public class Loan {
     private int period;
     private boolean isReturned;
     private ArrayList<Copy> loanItems;
-
+    private Friend friend;
     public Loan(String borrowDate, int period) {
         this.borrowDate = borrowDate;
         this.period = period;
@@ -32,6 +32,11 @@ public class Loan {
         this.isReturned = isReturned;
     }
 
+    public boolean setFriend(Friend friend){
+        this.friend = friend;
+        return friend != null;
+    }
+    
     public int getLoanNumber() {
         return loanNumber;
     }
@@ -44,8 +49,21 @@ public class Loan {
         return period;
     }
 
+    public Friend getFriend(){
+        return friend;
+    }
+    
     public boolean isReturned() {
         return isReturned;
+    }
+    
+    public boolean addCopy(Copy copy){
+        boolean isNotEmpty = false;
+        if(copy != null){
+            loanItems.add(copy);
+            isNotEmpty = true;
+        }
+        return isNotEmpty;
     }
 
     public void printLoanInfo() {
