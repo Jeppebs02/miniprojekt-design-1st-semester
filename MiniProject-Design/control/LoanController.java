@@ -1,6 +1,7 @@
 package control;
 import model.Loan;
 import model.LoanContainer;
+import model.Copy;
 
 
 public class LoanController {
@@ -27,8 +28,9 @@ public class LoanController {
     }
 
     // Tilføj en kopi til et eksisterende lån
-    public boolean addCopyToLoan() {
+    public boolean addCopyToLoan(Loan loan, Copy copy) {
         // Implementer logikken for at tilføje en kopi til et eksisterende lån
+        
         return false;
     }
 

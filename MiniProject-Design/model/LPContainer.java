@@ -42,4 +42,8 @@ public class LPContainer {
         }
         return foundLP;
     }
+    
+    public Copy findCopyBySerialNumber(LP lp, int sn){
+        return lp.findCopyBySerialNumber(sn);
+    }
 }
