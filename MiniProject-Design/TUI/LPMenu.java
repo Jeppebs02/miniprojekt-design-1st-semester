@@ -70,7 +70,7 @@ public class LPMenu {
         lpc = createLPController();
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Skriv venligst LP'ens stregkode");
-        int barcode = keyboard.nextInt();
+        int barcode = getIntegerFromUser(keyboard);
         //TODO FailSafe
         keyboard.nextLine();
         System.out.println("Skriv venligst LP'ens Titel");
@@ -86,16 +86,16 @@ public class LPMenu {
         lpc = createLPController();
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Skriv venligst LP'ens stregkode");
-        int barcode = keyboard.nextInt();
+        int barcode = getIntegerFromUser(keyboard);
         //TODO FailSafe
         System.out.println("Skriv venligst kopiens serienummer");
-        int serialNumber = keyboard.nextInt();
+        int serialNumber = getIntegerFromUser(keyboard);
         //TODO FailSafe
         System.out.println("Skriv venligst kopiens købsdato");
         String purchaseDate = keyboard.nextLine();
         keyboard.nextLine();
         System.out.println("Skriv venligst kopiens købspris");
-        int purchasePrice = keyboard.nextInt();
+        int purchasePrice = getIntegerFromUser(keyboard);
         keyboard.nextLine();
         //TODO FailSafe
         lpc.createLPCopy(lpc.findLPByBarcode(barcode),serialNumber, purchaseDate, purchasePrice);
@@ -106,7 +106,7 @@ public class LPMenu {
         lpc = createLPController();
         Scanner keyboard = new Scanner(System.in);  
         System.out.println("Skriv venligst LP'ens stregkode");
-        int barcode = keyboard.nextInt();
+        int barcode = getIntegerFromUser(keyboard);
         keyboard.nextLine();
         LP foundLP = lpc.findLPByBarcode(barcode);
         foundLP.printLPInfo();
