@@ -14,7 +14,7 @@ public class LP {
     private String publicationDate;
     private ArrayList<Copy> copies;
     private Iterator<Copy> iterator;
-
+    //Husk NumberOfCopies
     public LP(int barcode, String title, String artist, String publicationDate) {
         this.barcode = barcode;
         this.title = title;

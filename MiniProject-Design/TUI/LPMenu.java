@@ -1,6 +1,9 @@
 package TUI;
 import java.util.Scanner;
 import control.LPController;
+import model.LP;
+import model.LPContainer;
+import java.util.Iterator;
 
 /**
  *
@@ -30,10 +33,10 @@ public class LPMenu {
                     createCopyMenu();
                     break;
                 case 3:
-                    
+                    findLP();
                     break;
                 case 4:
-                    
+                    printAllLP();
                     break;
                 case 0:
                     running = false;
@@ -69,9 +72,9 @@ public class LPMenu {
         System.out.println("Skriv venligst LP'ens stregkode");
         int barcode = keyboard.nextInt();
         //TODO FailSafe
+        keyboard.nextLine();
         System.out.println("Skriv venligst LP'ens Titel");
         String title = keyboard.nextLine();
-        keyboard.nextLine();
         System.out.println("Skriv venligst LP'ens Artist");
         String artist = keyboard.nextLine();
         System.out.println("Skriv venligst LP'ens udgivelses dato");
@@ -99,6 +102,27 @@ public class LPMenu {
         
     }
     
+    private void findLP(){
+        lpc = createLPController();
+        Scanner keyboard = new Scanner(System.in);  
+        System.out.println("Skriv venligst LP'ens stregkode");
+        int barcode = keyboard.nextInt();
+        keyboard.nextLine();
+        LP foundLP = lpc.findLPByBarcode(barcode);
+        foundLP.printLPInfo();
+        
+        
+    }
+    
+    private void printAllLP(){
+        LPContainer lpc = LPContainer.getInstance();
+        Iterator<LP> iterator = lpc.getIterator();
+        while(iterator.hasNext()){
+            LP currentLP = iterator.next();
+            currentLP.printLPInfo();
+            System.out.println();
+        }
+    }
     
     private int getIntegerFromUser(Scanner keyboard) {
         while (!keyboard.hasNextInt()) {
