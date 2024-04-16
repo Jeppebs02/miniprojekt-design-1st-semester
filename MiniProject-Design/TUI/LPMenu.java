@@ -1,6 +1,12 @@
 package TUI;
 import java.util.Scanner;
 import control.LPController;
+
+/**
+ *
+ * @author (Matias, Jeppe, Oscar, Magnus, Kasper)
+ * @version (16/04/2024)
+ */
 public class LPMenu {
     private LPController lpc;
     public LPMenu() {// initialise instance variables
@@ -92,6 +98,7 @@ public class LPMenu {
         lpc.createLPCopy(lpc.findLPByBarcode(barcode),serialNumber, purchaseDate, purchasePrice);
         
     }
+    
     
     private int getIntegerFromUser(Scanner keyboard) {
         while (!keyboard.hasNextInt()) {

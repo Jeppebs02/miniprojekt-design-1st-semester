@@ -1,7 +1,11 @@
 package control;
 
 import model.*;
-
+/**
+ *
+ * @author (Matias, Jeppe, Oscar, Magnus, Kasper)
+ * @version (16/04/2024)
+ */
 public class LoanController {
     private LoanContainer loanContainer;
     private FriendContainer friendContainer;

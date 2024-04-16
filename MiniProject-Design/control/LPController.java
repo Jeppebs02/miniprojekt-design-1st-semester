@@ -2,6 +2,11 @@ package control;
 import model.LP;
 import model.LPContainer;
 import model.Copy;
+/**
+ *
+ * @author (Matias, Jeppe, Oscar, Magnus, Kasper)
+ * @version (16/04/2024)
+ */
 public class LPController {
     private LPContainer lpContainer;
 

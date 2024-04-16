@@ -1,6 +1,11 @@
 package TUI;
 
 import java.util.Scanner;
+/**
+ *
+ * @author (Matias, Jeppe, Oscar, Magnus, Kasper)
+ * @version (16/04/2024)
+ */
 public class LoanMenu {
     public LoanMenu() {// initialise instance variables
     }
