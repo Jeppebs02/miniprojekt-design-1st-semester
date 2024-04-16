@@ -78,4 +78,9 @@ public class LP {
         }
         return foundCopy;
     }
+    
+    public Copy createCopy(int serialNumber, String purchaseDate, int purchasePrice){
+        Copy c = new Copy(serialNumber,purchaseDate,purchasePrice);
+        return c;
+    }
 }
