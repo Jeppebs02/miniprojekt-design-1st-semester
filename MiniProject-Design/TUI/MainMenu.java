@@ -41,8 +41,7 @@ public class MainMenu {
                     loanMenu.start();
                     break;
                 case 9:
-                    //TryMe.generateTestData();
-                    //createTestData();
+                    TryMe.addTestData();
                     break;
                 case 0:
                     System.out.println("Tak for denne gang.");

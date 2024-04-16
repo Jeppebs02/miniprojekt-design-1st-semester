@@ -12,7 +12,7 @@ import model.*;
  */
 public class TryMe {
     /* only for generating data to test */
-    private static void addTestData() {
+    public static void addTestData() {
         LoanContainer lc = LoanContainer.getInstance();
         FriendContainer fc = FriendContainer.getInstance();
         LPContainer lpc = LPContainer.getInstance();
