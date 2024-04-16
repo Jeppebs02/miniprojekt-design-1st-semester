@@ -10,8 +10,9 @@ import model.Friend;
  */
 
 public class FriendsMenu {
-  public FriendsMenu() {// initialise instance variables
+    public FriendsMenu() {// initialise instance variables
     }
+
     public void start() {
         friendsMenu();
     }
@@ -25,8 +26,10 @@ public class FriendsMenu {
                     break;
                 case 2:
                     searchFriendMenu();
+                    break;
                 case 3:
                     printAllFriendsMenu(); 
+                    break;
                 case 0:
                     running = false;
                     break;
@@ -56,51 +59,46 @@ public class FriendsMenu {
         }
         return keyboard.nextInt();}
 
-        private FriendController createFriendController(){
-            FriendController fc=new FriendController();
-            return fc;
-        }
-
+    private FriendController createFriendController(){
+        FriendController fc=new FriendController();
+        return fc;
+    }
 
     private void createFriendMenu() {
         FriendController fc= createFriendController();
-        
+
         Scanner keyboard = new Scanner(System.in);
-         System.out.println("Skriv venligst din vens navn");
-         String name = keyboard.nextLine();
-         keyboard.nextLine();
-         System.out.println("Skriv venligst din vens adresse");
-         String address= keyboard.nextLine().replace("\n", "");
-         System.out.println("Skriv venligst din vens postnummer");     
-         int postalCode = getIntegerFromUser(keyboard);
-         keyboard.nextLine();
-         System.out.println("Skriv venligst din vens by");
-         String city = keyboard.nextLine().replace("\n", ""); 
-         System.out.println("Skriv venligst din vens tlf nr"); 
-         int phone= getIntegerFromUser(keyboard);
-         keyboard.nextLine();
+        System.out.println("Skriv venligst din vens navn");
+        String name = keyboard.nextLine();
+        System.out.println("Skriv venligst din vens adresse");
+        String address= keyboard.nextLine().replace("\n", "");
+        System.out.println("Skriv venligst din vens postnummer");     
+        int postalCode = getIntegerFromUser(keyboard);
+        keyboard.nextLine();
+        System.out.println("Skriv venligst din vens by");
+        String city = keyboard.nextLine().replace("\n", ""); 
+        System.out.println("Skriv venligst din vens tlf nr"); 
+        int phone= getIntegerFromUser(keyboard);
+        keyboard.nextLine();
 
-         fc.createFriend(name, address, postalCode, city, phone);
+        fc.createFriend(name, address, postalCode, city, phone);
 
+    }
+    private void searchFriendMenu(){
+        FriendController fc = createFriendController();
 
-        }
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Skriv venligst din vens tlf nr");
+        int tlfSearch = getIntegerFromUser(keyboard);
+        keyboard.nextLine(); 
+        Friend foundFriend =    fc.findFriendByTlf(tlfSearch);
+        foundFriend.printFriendInfo();            
 
-        private void searchFriendMenu(){
-            FriendController fc = createFriendController();
-
-            Scanner keyboard = new Scanner(System.in);
-            System.out.println("Skriv venligst din vens tlf nr");
-            int tlfSearch = getIntegerFromUser(keyboard);
-            keyboard.nextLine(); 
-            Friend foundFriend =    fc.findFriendByTlf(tlfSearch);
-            foundFriend.printFriendInfo();            
-
-        }
-
-        //Struktureret på en anden måde end LP menu print all LP function. Spørg underviser hvad der er rigtigt. - Jeppe
-        private void printAllFriendsMenu(){
-            FriendController fc = createFriendController();
-            fc.printAllFriends();
-        }
     }
 
+    //Struktureret på en anden måde end LP menu print all LP function. Spørg underviser hvad der er rigtigt. - Jeppe
+    private void printAllFriendsMenu(){
+        FriendController fc = createFriendController();
+        fc.printAllFriends();
+    }
+}
