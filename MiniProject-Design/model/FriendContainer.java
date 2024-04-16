@@ -46,4 +46,16 @@ public class FriendContainer {
         }
         return foundFriend;
     }
+
+    public Friend findFriendByTlf(int tlf){
+        Friend foundFriend = null;
+        for(Friend friend : friends){
+            if(friend.getPhone()==tlf){
+                foundFriend=friend;
+            } 
+        }
+        return foundFriend;
+    }
+
+
 }
