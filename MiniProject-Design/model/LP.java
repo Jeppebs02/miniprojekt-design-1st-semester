@@ -14,12 +14,17 @@ public class LP {
     private String publicationDate;
     private ArrayList<Copy> copies;
     private Iterator<Copy> iterator;
-    //Husk NumberOfCopies
+    private int numberOfCopies;
     public LP(int barcode, String title, String artist, String publicationDate) {
         this.barcode = barcode;
         this.title = title;
         this.artist = artist;
         this.publicationDate = publicationDate;
+        if(copies != null){
+            numberOfCopies = copies.size();
+        } else {
+            numberOfCopies = 0;
+        }
         copies = new ArrayList<>();
     }
 
@@ -55,23 +60,29 @@ public class LP {
         return publicationDate;
     }
 
+    public int getNumberOfCopies(){
+        return numberOfCopies;
+    }
+
     public void printLPInfo() {
         System.out.println("Barcode: " + barcode);
         System.out.println("Title: " + title);
         System.out.println("Artist: " + artist);
         System.out.println("Publication Date: " + publicationDate);
+        System.out.println("This LP have " + numberOfCopies + " copies");
     }
-    
+
     //tilføj til systemudviklingsdiagramer
     public boolean addCopy(Copy newCopy) {
         boolean addedCopy = false;
         if (newCopy!=null) {
             copies.add(newCopy);
             addedCopy = true;
+            numberOfCopies++;
         }
         return addedCopy;
     }
-    
+
     //tilføj til systemudviklingsdiagramer
     public Copy findCopyBySerialNumber(int serialNumber) {
         Copy foundCopy = null;
@@ -82,7 +93,7 @@ public class LP {
         }
         return foundCopy;
     }
-    
+
     public Copy createCopy(int serialNumber, String purchaseDate, int purchasePrice){
         Copy c = new Copy(serialNumber,purchaseDate,purchasePrice);
         return c;
