@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.1.1">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>0</x>
+      <y>90</y>
+      <w>522</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Pre: Friend and Copy exist.
+Post: A Loan is created and associated with Friend and Copy if the wanted copy is present.
+1. A friend wants to borrow an LP.
+2. The lender types in name or phone number.
+3. The system finds the friend.
+4. The lender states which copy there is to be borrowed.
+5. The system returns copy-information.
+6. The lender completes the loan.
+7. The system records the copy and reports that the loan has been created.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>540</x>
+      <y>99</y>
+      <w>54</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lender</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>819</x>
+      <y>126</y>
+      <w>90</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>:System
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>855</x>
+      <y>144</y>
+      <w>27</w>
+      <h>369</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;390.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>558</x>
+      <y>171</y>
+      <w>27</w>
+      <h>351</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;370.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>558</x>
+      <y>270</y>
+      <w>324</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Friend info
+lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;20.0;340.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>558</x>
+      <y>315</y>
+      <w>324</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>typeInCopy(serialNumber)
+lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>340.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>558</x>
+      <y>432</y>
+      <w>324</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>confirms loan has been created
+lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;20.0;340.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>72</x>
+      <y>279</y>
+      <w>369</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>operation contract
+
+Operation: createLoan()
+Use case: Lend LP
+Precondition: An instance of Friend f and Copy c exists
+
+Postcondition:
+Object c has been lend out to f. 
+The Loan has been recorded.
+The System has reported the loan information.
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1359</x>
+      <y>243</y>
+      <w>153</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>:LoanMenu
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1359</x>
+      <y>423</y>
+      <w>153</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>:LoanController
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1422</x>
+      <y>261</y>
+      <w>306</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+1.1.1. l = createLoan(borrowDate:String, period:int)
+2 f= findFriendByPhoneNumber(PhoneNumber:int)
+3 c= typeInCopy(serialNumber:int)
+4 s= saveLoan()
+</panel_attributes>
+    <additional_attributes>10.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1269</x>
+      <y>639</y>
+      <w>153</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>:Loan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1467</x>
+      <y>738</y>
+      <w>153</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>:loanContainer
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1332</x>
+      <y>441</y>
+      <w>315</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+1.1.1.1. &lt;&lt;create&gt;&gt; Loan(borrowDate:String, period:int)
+3.1.2. addCopy(c: Copy)
+3.1.3. addFriend(f: Friend)</panel_attributes>
+    <additional_attributes>10.0;220.0;10.0;80.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1422</x>
+      <y>441</y>
+      <w>243</w>
+      <h>315</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+4.1 saveLoan(l: Loan)
+</panel_attributes>
+    <additional_attributes>120.0;330.0;120.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>558</x>
+      <y>360</y>
+      <w>324</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>copy info
+lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;20.0;340.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>558</x>
+      <y>216</y>
+      <w>324</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>findFriendByPhoneNumber(phoneNumber)
+lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>340.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>558</x>
+      <y>171</y>
+      <w>324</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>createLoan()
+lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>340.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>900</x>
+      <y>423</y>
+      <w>153</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>:FriendController
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1836</x>
+      <y>423</y>
+      <w>153</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>:LPController
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1044</x>
+      <y>423</y>
+      <w>333</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+2.1. f= findFriendByPhoneNumber(PhoneNumber:int)</panel_attributes>
+    <additional_attributes>10.0;20.0;350.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1503</x>
+      <y>423</y>
+      <w>351</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+3.1. f= findCopyBySerialNumber(serialNumber:int)</panel_attributes>
+    <additional_attributes>370.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>900</x>
+      <y>504</y>
+      <w>153</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>:FriendContainer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>900</x>
+      <y>594</y>
+      <w>153</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>:Friend</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1836</x>
+      <y>522</y>
+      <w>153</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>:LPContainer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1836</x>
+      <y>594</y>
+      <w>153</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>:LP</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>954</x>
+      <y>441</y>
+      <w>333</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+2.1.1. f= findFriendByPhoneNumber(PhoneNumber:int)</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>954</x>
+      <y>522</y>
+      <w>342</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+2.1.1.1. *[i=1..n] phoneNumber = getPhoneNumber(): int</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1899</x>
+      <y>441</y>
+      <w>315</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+3.1.1. f= findCopyBySerialNumber(serialNumber:int)</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1899</x>
+      <y>540</y>
+      <w>324</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+3.1.1.1. f= findCopyBySerialNumber(serialNumber:int)</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1836</x>
+      <y>666</y>
+      <w>153</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>:Copy</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1899</x>
+      <y>612</y>
+      <w>342</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+3.1.1.1.1. *[i=1..n] serialNumber = getSerialNumber(): int</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>999</x>
+      <y>126</y>
+      <w>378</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+1. createLoan(loanNumber:int, borrowDate:String, period:int)</panel_attributes>
+    <additional_attributes>400.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1359</x>
+      <y>126</y>
+      <w>153</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>:MainMenu
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1422</x>
+      <y>144</y>
+      <w>369</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+1.1. createLoan(loanNumber:int, borrowDate:String, period:int)</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>558</x>
+      <y>396</y>
+      <w>324</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>saveLoan()
+lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>340.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+</diagram>

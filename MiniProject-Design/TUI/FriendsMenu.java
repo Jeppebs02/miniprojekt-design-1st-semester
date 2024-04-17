@@ -84,6 +84,7 @@ public class FriendsMenu {
         fc.createFriend(name, address, postalCode, city, phone);
 
     }
+    
     private void searchFriendMenu(){
         FriendController fc = createFriendController();
 

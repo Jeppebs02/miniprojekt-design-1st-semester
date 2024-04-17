@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.1.1">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>440</x>
+      <y>1112</y>
+      <w>336</w>
+      <h>296</h>
+    </coordinates>
+    <panel_attributes>Loan
+--
+-loanNumber : int
+-borrowDate : String
+-period : int
+-isReturned : boolean
+-loanItems: ArrayList&lt;Copy&gt;
+-friend : Friend
+
+--
++&lt;&lt;create&gt;&gt; Loan(borrowDate: int, period: int)
++setLoanNumber(name:int): void
++setBorrowDate(date:String): void
++setPeriod(daysOfLoan:int): void
++setIsReturned(isReturned:boolean): void
++getLoanNumber(): int
++getBorrowDate(): String
++getLendPeriod(): int
++isReturned(): boolean
++addCopy(copy:Copy): void
++printLoanInfo(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>528</x>
+      <y>896</y>
+      <w>184</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>LoanContainer
+--
+-loans : ArrayList&lt;Loan&gt;
+_-instance : LoanContainer_
+_-iterator : Iterator&lt;Loan&gt;_
+--
+-&lt;&lt;create&gt;&gt; LoanContainer()
++addLoan(l: Loan) boolean
+_+getInstance(): LoanContainer_
++getIterator(): Iterator&lt;Loan&gt;
++findLoanByLoanNumber(): Loan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>464</x>
+      <y>720</y>
+      <w>376</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>LoanController
+--
+-loanContainer:LoanContainer
+-friendContainer:FriendContainer 
+--
++&lt;&lt;create&gt;&gt;LoanController()
++createLoan(borrowDate:String, period:int)
++saveLoan(newLoan:Loan): booloan
++findLoanByLoanNumber(loanNumber:int): Loan
++addCopyToLoan(loanNumber:int, copy:Copy): boolean
++addFriendToLoan(loanNumber:int, friend:Friend): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>488</x>
+      <y>424</y>
+      <w>288</w>
+      <h>248</h>
+    </coordinates>
+    <panel_attributes>LoanMenu
+--
+....
+--
++start(): void
+-loanMenu(): void
+-writeLoanMenu(): int
+-
++start(): void
+-writeLoanMenu(): int
++createLoanMenu(): void
+-getIntegerFromUser(keyboard:Scanner): int
+-createFriendController(): FriendController
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>504</x>
+      <y>864</y>
+      <w>24</w>
+      <h>264</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;310.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>600</x>
+      <y>864</y>
+      <w>24</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>608</x>
+      <y>1016</y>
+      <w>24</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>992</x>
+      <y>872</y>
+      <w>248</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>LPContainer
+--
+-lp : ArrayList&lt;LP&gt;
+_-instance : LPContainer_
+_-iterator : Iterator&lt;LP&gt;_
+--
+-&lt;&lt;create&gt;&gt; LPContainer()
++addLP(lp: LP) boolean
+_+getInstance(): LPContainer_
++getIterator(): Iterator&lt;LP&gt;
++findLPByBarcode(barcode:int): LP
++findLPBySerialNumber(lp:LP, sn:int): LP</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>152</x>
+      <y>864</y>
+      <w>184</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>FriendContainer
+--
+-friends : ArrayList&lt;Friend&gt;
+_-instance : FriendContainer_
+_-iterator : Iterator&lt;Friend&gt;_
+--
+-&lt;&lt;create&gt;&gt; FriendContainer()
++addFriend(f: Friend): Friend
+_+getInstance(): FriendContainer_
++getIterator(): Iterator&lt;Friend&gt;
++findFriendByName(name:String): Friend
++findFriendByTlf(tlf:int): Friend
++printAllFriends(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>64</x>
+      <y>696</y>
+      <w>376</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>FriendController
+--
+-friendContainer: FriendContainer
+--
++&lt;&lt;create&gt;&gt; FriendController()
++createFriend(name:String, address:String, postalCode:int, city:String, phone:int): void
++saveFriend(newFriend:Friend): boolean
++findFriendByName(name:String): Friend
++findFriendByTlf(tlf:int): Friend
++printAllFriends(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>888</x>
+      <y>720</y>
+      <w>456</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>LPController
+--
+-lpContainer : LPContainer
+--
++&lt;&lt;create&gt;&gt;LPController()
++createLP(barcode:int, title:String, artist:String, publicationDate:String): void
++saveLP(newLP:LP): boolean
++findLPByBarcode(barcode:int): LP
++findCopyBySerialNumber(lp:LP , sn:int)
++createLPCopy(lp:LP, serialNumber:int, purchaseDate:String, purchasePrice:int): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>248</x>
+      <y>664</y>
+      <w>24</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>248</x>
+      <y>816</y>
+      <w>24</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1104</x>
+      <y>848</y>
+      <w>24</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>56</x>
+      <y>1088</y>
+      <w>336</w>
+      <h>304</h>
+    </coordinates>
+    <panel_attributes>Friend
+--
+-name : String
+-address : String
+-postalCode : int
+-city : String
+-phone : int
+
+--
++&lt;&lt;create&gt;&gt; Friend(name:String, address:String, postalCode:int, city:String, phone:int)
++setName(name:String): void
++setAddress(address:String): void
++setPostalCode(postalCode:int): void
++setCity(city:String): void
++setPhone(phoneNumber:int): void
++getName(): String
++getAddress(): String
++getPostalCode(): int
++getCity(): String
++getPhone(): int
++printFriendInfo(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>880</x>
+      <y>1072</y>
+      <w>376</w>
+      <h>288</h>
+    </coordinates>
+    <panel_attributes>LP
+--
+-barcode : int
+-title : String
+-artist : String
+-publicationDate : String
+-copies : ArrayList&lt;Copy&gt;()
+-iterator : Iterator&lt;Copy&gt;()
+-numberOfCopies : int
+--
++&lt;&lt;create&gt;&gt; LP(barcode:int, title:String, artist:String, publicationDate:String)
++setBarcode(barcode:int): void
++setTitle(title:String): void
++setArtist(artist:String): void
++setPublicationDate(date:String)
++getBarcode(): int
++getTitle(): String
++getArtist(): String
++getPublicationDate(): String
++printLPInfo(): void
++addCopy(): boolean
++findCopyBySerialNumber(serialNumber:int)
++createCopy(serialNumber:int, purchaseDate:String, purchasePrice:int)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>296</x>
+      <y>1024</y>
+      <w>24</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1152</x>
+      <y>1016</y>
+      <w>24</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>96</x>
+      <y>816</y>
+      <w>24</w>
+      <h>288</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;340.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>920</x>
+      <y>848</y>
+      <w>24</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;280.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>888</x>
+      <y>1416</y>
+      <w>336</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>Copy
+--
+-serialNumber : int
+-purchaseDate : String
+-purchasePrice : int
+-burrowed : boolean
+--
++&lt;&lt;create&gt;&gt; Copy(serialNumber:int, purchaseDate:String, purchasePrice:int)
++setSerialNumber(serialNumber:int): void
++setPurchaseDate(purchaseDate:String): void
++setPurchasePrice(purchasePrice:int): void
++getSerialNumber(): int
++getPurchaseDate(): String
++getPurcahsePrice(): int
++printCopyInfo(): void
++setBurrowed(): void
++isBorrowed(): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1040</x>
+      <y>1352</y>
+      <w>24</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>488</x>
+      <y>72</y>
+      <w>288</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>MainMenu
+--
+-LoanMenu: loanMenu
+-FriendMenu: FriendMenu
+-LPMenu: LPMenu
+--
++&lt;&lt;create&gt;&gt;MainMenu()
++start(): void
+-mainMenu(): void
+-writeMainMenu(): int
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>976</x>
+      <y>424</y>
+      <w>288</w>
+      <h>248</h>
+    </coordinates>
+    <panel_attributes>LPMenu
+--
+-LPController: lpc
+--
++start(): void
+-lpMenu(): void
+-writeLPMenu(): int
+-createLPController(): LPController
+-createLPMenu(): void
+-createCopyMenu(): void
+-findLP(): void
+-printAllLP(): void
+-getIntegerFromUser(keyboard:Scanner): int
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>112</x>
+      <y>424</y>
+      <w>288</w>
+      <h>248</h>
+    </coordinates>
+    <panel_attributes>FriendsMenu
+--
+....
+--
++start(): void
+-friendsMenu(): void
+-writeFriendsMenu(): int
+-getIntegerFromUser(keyboard:Scanner): int
+-createFriendController(): FriendController
+-createFriendMenu(): void
+-searchFriendMenu(): void
+-printAllFriendsMenu(): void
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1104</x>
+      <y>664</y>
+      <w>24</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>616</x>
+      <y>664</y>
+      <w>24</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>304</y>
+      <w>488</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>590.0;150.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>616</x>
+      <y>304</y>
+      <w>24</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>232</x>
+      <y>304</y>
+      <w>392</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;150.0;470.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>872</x>
+      <y>72</y>
+      <w>288</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>TryMe
+--
+...
+--
++addTestData(): void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>768</x>
+      <y>176</y>
+      <w>120</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>832</x>
+      <y>768</y>
+      <w>72</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>432</x>
+      <y>776</y>
+      <w>48</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;40.0;10.0</additional_attributes>
+  </element>
+</diagram>
