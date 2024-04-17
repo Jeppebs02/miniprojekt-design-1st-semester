@@ -24,12 +24,26 @@ public class TryMe {
         fc.addFriend(new Friend("Jeppe", "Under en bro", 9000, "Nørresundby", 33112233));
         
         LP test1 = new LP(1111, "Gammel plade 1", "Gammel Artist 1", "1-1-1924");
-        lpController.createLPCopy(test1, 112233, "20/04/2020", 500);
+        lpController.createLPCopy(test1, 111111, "20/04/2020", 500);
         lpc.addLP(test1);
-        //lpc.addLP(new LP(1222, "Gammel plade 2", "Gammel Artist 2", "1-3-1923"));
-        //lpc.addLP(new LP(1333, "Gammel plade 3", "Gammel Artist 3", "1-2-1922"));
-        //lpc.addLP(new LP(1444, "Gammel plade 4", "Gammel Artist 4", "1-4-1920"));
-        //lpc.addLP(new LP(1555, "Gammel plade 5", "Gammel Artist 5", "1-5-1919"));
+        
+        LP test2 = new LP(1222, "Gammel plade 2", "Gammel Artist 2", "1-3-1923");
+        lpController.createLPCopy(test2, 222222, "12/02/2002", 300);
+        lpc.addLP(test2);
+        
+        LP test3 = new LP(1333, "Gammel plade 3", "Gammel Artist 3", "1-2-1922");
+        lpController.createLPCopy(test3, 333333, "09/08/1999",100);
+        lpc.addLP(test3);
+        
+        LP test4 = new LP(1444, "Gammel plade 4", "Gammel Artist 4", "1-4-1920");
+        lpController.createLPCopy(test4, 444444,"18/12/1893",1000);
+        lpc.addLP(test4);
+        
+        LP test5 = new LP(1555, "Gammel plade 5", "Gammel Artist 5", "1-5-1919");
+        lpController.createLPCopy(test5,555555, "21/07/2009", 250);
+        lpc.addLP(test5);
+        
+        
         
         
         
