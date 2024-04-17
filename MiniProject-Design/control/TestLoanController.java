@@ -110,5 +110,95 @@ public class TestLoanController
         assertEquals(5, loan.getPeriod());
     }
     
+    @Test
+    public void testFindFriendByPhoneNumberExistingFriend()
+    {
+        //Arrange
+        LoanController lc = new LoanController();
+        //fill test data i BeforeAll
+        
+        //act
+        Friend foundFriend = lc.findFriendByPhoneNumber(11112233);
+        
+        //Assert
+        assertNotNull(lc);
+        assertEquals("Oscar", foundFriend.getName());
+        assertEquals("UCN2", foundFriend.getAddress());
+    }
     
+    @Test
+    public void testFindFriendByPhoneNumberNonExistingFriend()
+    {
+        //Arrange
+        LoanController lc = new LoanController();
+        //fill test data i BeforeAll
+        
+        //act
+        Friend foundFriend = lc.findFriendByPhoneNumber(44445555);
+        
+        //Assert
+        assertEquals(null, foundFriend.getName());
+        assertEquals(null, foundFriend.getAddress());
+    }
+    
+    @Test
+    public void testFindLPByBarcodeExistingLP()
+    {
+        //Arrange
+        LoanController lc = new LoanController();
+        //fill test data i BeforeAll
+        
+        //act
+        LP foundLP = lc.findLPByBarcode(1333);
+        
+        //Assert
+        assertNotNull(lc);
+        assertEquals("Gammel plade 3", foundLP.getTitle());
+        assertEquals("Gammel Artist 3", foundLP.getArtist());
+    }
+    
+    @Test
+    public void testFindLPByBarcodeNonExistingLP()
+    {
+        //Arrange
+        LoanController lc = new LoanController();
+        //fill test data i BeforeAll
+        
+        //act
+        LP foundLP = lc.findLPByBarcode(9999);
+        
+        //Assert
+        assertEquals(null, foundLP.getTitle());
+        assertEquals(null, foundLP.getArtist());
+    }
+    
+    @Test
+    public void testTypeInCopyOneExistingCopy()
+    {
+        //Arrange
+        LoanController lc = new LoanController();
+        //fill test data i BeforeAll
+        
+        //act
+        Copy foundCopy = lc.typeInCopy(1111, 111111);
+        
+        //Assert
+        assertNotNull(lc);
+        assertEquals(500, foundCopy.getPurchasePrice());
+        assertEquals("20/04/2020", foundCopy.getPurchaseDate());
+    }
+    
+    @Test
+    public void testTypeInCopyOneNonValidCopy()
+    {
+        //Arrange
+        LoanController lc = new LoanController();
+        //fill test data i BeforeAll
+        
+        //act
+        Copy foundCopy = lc.typeInCopy(9999, 999999);
+        
+        //Assert
+        assertEquals(null, foundCopy.getPurchaseDate());
+    }
 }
