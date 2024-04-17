@@ -11,16 +11,14 @@ public class Loan {
     private String borrowDate;
     private int period;
     private boolean isReturned;
-    private ArrayList<Copy> loanItems;
+    private Copy copy;
     private Friend friend;
     public Loan(String borrowDate, int period) {
         this.borrowDate = borrowDate;
         this.period = period;
         this.isReturned = false;
-        this.loanItems = new ArrayList<>();
     }
     
-
     public void setLoanNumber(int loanNumber) {
         this.loanNumber = loanNumber;
     }
@@ -42,6 +40,11 @@ public class Loan {
         return friend != null;
     }
     
+    public boolean setCopy(Copy copy){
+        this.copy = copy;
+        return copy != null;
+    }
+    
     public int getLoanNumber() {
         return loanNumber;
     }
@@ -58,6 +61,10 @@ public class Loan {
         return friend;
     }
     
+    public Copy getCopy(){
+        return copy;
+    }
+    
     public boolean isReturned() {
         return isReturned;
     }
@@ -65,7 +72,7 @@ public class Loan {
     public boolean addCopy(Copy copy){
         boolean isNotEmpty = false;
         if(copy != null && !copy.isBorrowed()){
-            loanItems.add(copy);
+            setCopy(copy);
             copy.setBorrowed(true);
             isNotEmpty = true;
         }
@@ -77,6 +84,11 @@ public class Loan {
         System.out.println("Udlånsdato: " + borrowDate);
         System.out.println("Låneperiode: " + period + " dage");
         System.out.println("Afleveret: " + isReturned);
+        System.out.println();
+        System.out.println("Låner: ");
+        friend.printFriendInfo();
+        System.out.println("LP kopi: ");
+        copy.printCopyInfo();
     }
 }
 

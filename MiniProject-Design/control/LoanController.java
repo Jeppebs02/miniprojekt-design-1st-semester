@@ -48,7 +48,6 @@ public class LoanController {
         this.newCopy= copy;
     }
     
-
     public Loan findLoanByLoanNumber(int loanNumber){
         LoanContainer lc = LoanContainer.getInstance();
         return lc.findLoanByLoanNumber(loanNumber);
