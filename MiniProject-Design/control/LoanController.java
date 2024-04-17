@@ -15,7 +15,7 @@ public class LoanController {
 
     // Opret et nyt lån
     public Loan createLoan(String borrowDate, int period) {
-         newLoan = new Loan(borrowDate, period);
+        newLoan = new Loan(borrowDate, period);
         return newLoan;
     }
     
@@ -43,5 +43,4 @@ public class LoanController {
         newLoan.setFriend(newFriend);
         return LoanContainer.getInstance().addLoan(newLoan);
     }
-
 }

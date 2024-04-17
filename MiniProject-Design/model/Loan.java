@@ -50,7 +50,7 @@ public class Loan {
         return borrowDate;
     }
 
-    public int getLendPeriod() {
+    public int getPeriod() {
         return period;
     }
 

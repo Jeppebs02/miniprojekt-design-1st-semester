@@ -50,6 +50,12 @@ public class LoanMenu {
     public void createLoanMenu(){
         LoanController lc = new LoanController();
         Scanner keyboard = new Scanner(System.in);
+        int phoneNumber = 0;
+        boolean foundPhoneNumber = false;
+        int barcode = 0;
+        boolean foundBarcode = false;
+        int serialNumber = 0;
+        boolean foundSerialNumber = false;
 
         System.out.println("Skriv lånedato: ");
         String borrowDate = keyboard.nextLine();
@@ -61,28 +67,55 @@ public class LoanMenu {
         int newLoanNumber= newLoan.getLoanNumber();
         System.out.println("Lånenummeret er: " + newLoanNumber);
 
-        System.out.println("Skriv tlf nummer på låner: ");
-        int phoneNumber = getIntegerFromUser(keyboard);
-        keyboard.nextLine();
+        while (!foundPhoneNumber) {
+            System.out.println("Skriv tlf nummer på låner: ");
+            phoneNumber = getIntegerFromUser(keyboard);
+            keyboard.nextLine();
+            
+            lc.findFriendByPhoneNumber(phoneNumber);
 
-        //check for null
+            //check for null
+            if (lc.findFriendByPhoneNumber(phoneNumber) == null) {
+                System.out.println("Telefon nr. findes ikke");
+            } else {
+                foundPhoneNumber = true;
+            }
+        }
 
         Friend friend = lc.findFriendByPhoneNumber(phoneNumber);
         friend.printFriendInfo();
         System.out.println("er tilføjet til lånet");
 
-        System.out.println("Skriv stregkode på LP: ");
-        int barcode = getIntegerFromUser(keyboard);
-        keyboard.nextLine();
-
         //check for null
-
-        System.out.println("Skriv kopiens serienummer: ");
-        int serialNumber = getIntegerFromUser(keyboard);
-        keyboard.nextLine();
-
+        while (!foundBarcode) {
+            System.out.println("Skriv stregkode på LP: ");
+            barcode = getIntegerFromUser(keyboard);
+            keyboard.nextLine();
+            
+            lc.findLPByBarcode(barcode);
+            
+            if (lc.findLPByBarcode(barcode) == null) {
+                System.out.println("Stregkode findes ikke");
+            } else {
+                foundBarcode = true;
+            }
+        }
+        
         //check for null
-
+        while (!foundSerialNumber) {
+            System.out.println("Skriv kopiens serienummer: ");
+            serialNumber = getIntegerFromUser(keyboard);
+            keyboard.nextLine();
+            
+            lc.typeInCopy(barcode, serialNumber);
+            
+            if (lc.typeInCopy(barcode, serialNumber) == null) {
+                System.out.println("Serie nr. findes ikke");
+            } else {
+                foundSerialNumber = true;
+            }
+        }
+        
         Copy copy = lc.typeInCopy(barcode, serialNumber);
 
         System.out.println("En kopi af ");

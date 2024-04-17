@@ -1,17 +1,33 @@
-package TUI;
+package control;
 
-import TUI.MainMenu;
-import control.*;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 import model.*;
 
 /**
- * Testdata
- * @author (Matias, Jeppe, Oscar, Magnus, Kasper)
- * @version (16/04/2024)
+ * The test class ShoppingControllerTest.
+ *
+ * @author  (your name)
+ * @version (a version number or a date)
  */
-public class TryMe {
-    /* only for generating data to test */
-    public static void addTestData() {
+public class TestLoanController
+{
+    LoanController loanController;
+    
+    /**
+     * Default constructor for test class ShoppingControllerTest
+     */
+    public TestLoanController()
+    {
+    }
+
+    @BeforeAll
+    public static void init()
+    {
         LoanContainer lc = LoanContainer.getInstance();
         FriendController fc = new FriendController();
         LPContainer lpc = LPContainer.getInstance();
@@ -54,6 +70,45 @@ public class TryMe {
         
         LP test5 = new LP(1555, "Gammel plade 5", "Gammel Artist 5", "1-5-1919");
         lpController.createLPCopy(test5,555555, "21/07/2009", 250);
-        lpc.addLP(test5);       
+        lpc.addLP(test5); 
     }
+    
+    /**
+     * Sets up the test fixture.
+     *
+     * Called before every test case method.
+     */
+    @BeforeEach
+    public void setUp()
+    {
+        
+    }
+
+    /**
+     * Tears down the test fixture.
+     *
+     * Called after every test case method.
+     */
+    @AfterEach
+    public void tearDown()
+    {
+    }
+    
+    @Test
+    public void testCreateLoan()
+    {
+        //Arrange
+        LoanController lc = new LoanController();
+        //fill test data i BeforeAll
+        
+        //act
+        Loan loan = lc.createLoan("10-10-2010", 5);
+        
+        //Assert
+        assertNotNull(lc);
+        assertEquals("10-10-2010", loan.getBorrowDate());
+        assertEquals(5, loan.getPeriod());
+    }
+    
+    
 }
