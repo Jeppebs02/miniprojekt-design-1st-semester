@@ -9,10 +9,10 @@ import org.junit.jupiter.api.Test;
 import model.*;
 
 /**
- * The test class ShoppingControllerTest.
+ * The test class TestLoanController.
  *
- * @author  (your name)
- * @version (a version number or a date)
+ * @author  (Oscar, Kasper, Magnus og Jeppe)
+ * @version (17/04/2024)
  */
 public class TestLoanController
 {
