@@ -9,6 +9,7 @@ import model.*;
 public class LoanController {
     Loan newLoan;
     Friend newFriend;
+    Copy newCopy;
     public LoanController() {
         
     }
@@ -39,14 +40,19 @@ public class LoanController {
         
     }
     
-    public boolean addCopyToLoan(Copy copy){
-        return newLoan.addCopy(copy);
-    
+    public void setFriend(Friend friend){
+     this.newFriend=friend;
     }
+    
+    public void setCopy(Copy copy){
+        this.newCopy= copy;
+    }
+    
 
     // Gem et nyt lån i containeren
     public boolean saveLoan() {
         newLoan.setFriend(newFriend);
+        newLoan.addCopy(newCopy);
         return LoanContainer.getInstance().addLoan(newLoan);
     }
 }
