@@ -76,7 +76,7 @@ public class LP {
          System.out.println();
     }
 
-    //tilføj til systemudviklingsdiagramer
+    
     public boolean addCopy(Copy newCopy) {
         boolean addedCopy = false;
         if (newCopy!=null) {
@@ -87,7 +87,7 @@ public class LP {
         return addedCopy;
     }
 
-    //tilføj til systemudviklingsdiagramer
+    
     public Copy findCopyBySerialNumber(int serialNumber) {
         Copy foundCopy = null;
         for (Copy c : copies) {

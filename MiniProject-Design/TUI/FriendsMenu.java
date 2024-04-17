@@ -57,7 +57,8 @@ public class FriendsMenu {
             System.out.println("Input skal være et tal - prøv igen");
             keyboard.nextLine();
         }
-        return keyboard.nextInt();}
+        return keyboard.nextInt();
+    }
 
     private FriendController createFriendController(){
         FriendController fc=new FriendController();
@@ -68,16 +69,16 @@ public class FriendsMenu {
         FriendController fc= createFriendController();
 
         Scanner keyboard = new Scanner(System.in);
-        System.out.println("Skriv venligst din vens navn");
+        System.out.println("Skriv venligst lånerens navn");
         String name = keyboard.nextLine();
-        System.out.println("Skriv venligst din vens adresse");
+        System.out.println("Skriv venligst lånerens adresse");
         String address= keyboard.nextLine().replace("\n", "");
-        System.out.println("Skriv venligst din vens postnummer");     
+        System.out.println("Skriv venligst lånerens postnummer");     
         int postalCode = getIntegerFromUser(keyboard);
         keyboard.nextLine();
-        System.out.println("Skriv venligst din vens by");
+        System.out.println("Skriv venligst lånerens by");
         String city = keyboard.nextLine().replace("\n", ""); 
-        System.out.println("Skriv venligst din vens tlf nr"); 
+        System.out.println("Skriv venligst lånerens tlf nr"); 
         int phone= getIntegerFromUser(keyboard);
         keyboard.nextLine();
 
@@ -89,10 +90,10 @@ public class FriendsMenu {
         FriendController fc = createFriendController();
 
         Scanner keyboard = new Scanner(System.in);
-        System.out.println("Skriv venligst din vens tlf nr");
+        System.out.println("Skriv venligst lånerens tlf nr");
         int tlfSearch = getIntegerFromUser(keyboard);
         keyboard.nextLine(); 
-        Friend foundFriend =    fc.findFriendByTlf(tlfSearch);
+        Friend foundFriend = fc.findFriendByTlf(tlfSearch);
         foundFriend.printFriendInfo();            
 
     }

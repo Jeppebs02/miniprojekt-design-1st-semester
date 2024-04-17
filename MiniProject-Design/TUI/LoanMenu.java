@@ -1,6 +1,11 @@
 package TUI;
 
 import java.util.Scanner;
+import control.*;
+import model.Friend;
+import model.LP;
+import model.Loan;
+import model.Copy;
 /**
  *
  * @author (Matias, Jeppe, Oscar, Magnus, Kasper)
@@ -42,6 +47,46 @@ public class LoanMenu {
     }
 
     public void createLoanMenu(){
+        LoanController lc = new LoanController();
+        Scanner keyboard = new Scanner(System.in);
+        
+        System.out.println("Skriv lånedato: ");
+        String borrowDate = keyboard.nextLine();
+        System.out.println("Skriv antal dage på lånet: ");
+        int period = getIntegerFromUser(keyboard);
+        keyboard.nextLine();
+        
+        Loan newLoan = lc.createLoan(borrowDate, period);
+        int newLoanNumber= newLoan.getLoanNumber();
+        System.out.println("Lånenummeret er: " + newLoanNumber);
+        
+        System.out.println("Skriv tlf nummber på låner: ");
+        int phoneNumber = getIntegerFromUser(keyboard);
+        keyboard.nextLine();
+        Friend friend = lc.findFriendByPhoneNumber(phoneNumber);
+        
+        friend.printFriendInfo();
+        System.out.println("er tilføjet til lånet");
+        
+        System.out.println("Skriv stregkode på LP: ");
+        int barcode = getIntegerFromUser(keyboard);
+        keyboard.nextLine();
+        
+        System.out.println("Skriv kopiens serienummer: ");
+        int serialNumber = getIntegerFromUser(keyboard);
+        keyboard.nextLine();
+        
+        Copy copy = lc.typeInCopy(barcode, serialNumber);
+    
+        
+        System.out.println("En kopi af ");
+        LP lp = lc.findLPByBarcode(barcode);
+        lp.printLPInfo();
+        System.out.println(" er tilføjet til lånet.");
+        
+        lc.saveLoan();
+        System.out.println("Dit lån er nu oprettet.");
+        
         
     }
     

@@ -19,6 +19,7 @@ public class Loan {
         this.isReturned = false;
         this.loanItems = new ArrayList<>();
     }
+    
 
     public void setLoanNumber(int loanNumber) {
         this.loanNumber = loanNumber;
@@ -63,18 +64,19 @@ public class Loan {
     
     public boolean addCopy(Copy copy){
         boolean isNotEmpty = false;
-        if(copy != null){
+        if(copy != null && !copy.isBorrowed()){
             loanItems.add(copy);
+            copy.setBorrowed(true);
             isNotEmpty = true;
         }
         return isNotEmpty;
     }
 
     public void printLoanInfo() {
-        System.out.println("Loan Number: " + loanNumber);
-        System.out.println("Borrow Date: " + borrowDate);
-        System.out.println("Loan Period: " + period + " days");
-        System.out.println("Is Returned: " + isReturned);
+        System.out.println("Lånenummer: " + loanNumber);
+        System.out.println("Udlånsdato: " + borrowDate);
+        System.out.println("Låneperiode: " + period + " dage");
+        System.out.println("Afleveret: " + isReturned);
     }
 }
 

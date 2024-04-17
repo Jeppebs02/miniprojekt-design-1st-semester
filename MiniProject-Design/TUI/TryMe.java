@@ -13,15 +13,28 @@ public class TryMe {
     /* only for generating data to test */
     public static void addTestData() {
         LoanContainer lc = LoanContainer.getInstance();
-        FriendContainer fc = FriendContainer.getInstance();
+        FriendController fc = new FriendController();
         LPContainer lpc = LPContainer.getInstance();
         LPController lpController = new LPController();
         
-        fc.addFriend(new Friend("Magnus", "UCN1", 9000, "Aalborg", 22112233));
-        fc.addFriend(new Friend("Oscar", "UCN2", 9200, "Aalborg", 11112233));
-        fc.addFriend(new Friend("Kasper", "UCN3", 9400, "Nørresundby", 21112233));
-        fc.addFriend(new Friend("Matias", "Sin brændte bil", 9100, "Aalborg", 12112233));
-        fc.addFriend(new Friend("Jeppe", "Under en bro", 9000, "Nørresundby", 33112233));
+        Friend friend1 = fc.createFriend("Magnus", "UCN1", 9000, "Aalborg", 22112233);
+        fc.saveFriend(friend1);
+        
+        Friend friend2 = fc.createFriend("Oscar", "UCN2", 9200, "Aalborg", 11112233);
+        fc.saveFriend(friend2);
+        
+        
+        Friend friend3 = fc.createFriend("Kasper", "UCN3", 9400, "Nørresundby", 21112233);
+        fc.saveFriend(friend3);
+        
+        
+        Friend friend4 = fc.createFriend("Matias", "Sin brændte bil", 9100, "Aalborg", 12112233);
+        fc.saveFriend(friend4);
+        
+        Friend friend5 = fc.createFriend("Jeppe", "Under en bro", 9000, "Nørresundby", 33112233);
+        fc.saveFriend(friend5);
+        
+     
         
         LP test1 = new LP(1111, "Gammel plade 1", "Gammel Artist 1", "1-1-1924");
         lpController.createLPCopy(test1, 111111, "20/04/2020", 500);

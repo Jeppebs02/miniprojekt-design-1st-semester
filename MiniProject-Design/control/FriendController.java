@@ -15,9 +15,9 @@ public class FriendController {
     }
 
     // Opret en ny ven og tilføj den til containeren
-    public void createFriend(String name, String address, int postalCode, String city, int phone) {
+    public Friend createFriend(String name, String address, int postalCode, String city, int phone) {
         Friend newFriend = new Friend(name, address, postalCode, city, phone);
-        saveFriend(newFriend);
+        return newFriend;
     }
 
     // Gem en ny ven i containeren
