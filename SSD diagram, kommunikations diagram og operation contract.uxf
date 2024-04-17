@@ -5,7 +5,7 @@
     <id>UMLNote</id>
     <coordinates>
       <x>0</x>
-      <y>90</y>
+      <y>72</y>
       <w>522</w>
       <h>144</h>
     </coordinates>
@@ -24,7 +24,7 @@ Post: A Loan is created and associated with Friend and Copy if the wanted copy i
     <id>UMLActor</id>
     <coordinates>
       <x>540</x>
-      <y>99</y>
+      <y>81</y>
       <w>54</w>
       <h>99</h>
     </coordinates>
@@ -35,7 +35,7 @@ Post: A Loan is created and associated with Friend and Copy if the wanted copy i
     <id>UMLClass</id>
     <coordinates>
       <x>819</x>
-      <y>126</y>
+      <y>108</y>
       <w>90</w>
       <h>27</h>
     </coordinates>
@@ -47,7 +47,7 @@ Post: A Loan is created and associated with Friend and Copy if the wanted copy i
     <id>Relation</id>
     <coordinates>
       <x>855</x>
-      <y>144</y>
+      <y>126</y>
       <w>27</w>
       <h>369</h>
     </coordinates>
@@ -58,7 +58,7 @@ Post: A Loan is created and associated with Friend and Copy if the wanted copy i
     <id>Relation</id>
     <coordinates>
       <x>558</x>
-      <y>171</y>
+      <y>153</y>
       <w>27</w>
       <h>351</h>
     </coordinates>
@@ -69,7 +69,7 @@ Post: A Loan is created and associated with Friend and Copy if the wanted copy i
     <id>Relation</id>
     <coordinates>
       <x>558</x>
-      <y>270</y>
+      <y>252</y>
       <w>324</w>
       <h>36</h>
     </coordinates>
@@ -81,11 +81,11 @@ lt=&lt;.</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>558</x>
-      <y>315</y>
+      <y>297</y>
       <w>324</w>
       <h>36</h>
     </coordinates>
-    <panel_attributes>typeInCopy(serialNumber)
+    <panel_attributes>typeInCopy(barcode, serialNumber)
 lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>340.0;20.0;10.0;20.0</additional_attributes>
   </element>
@@ -93,7 +93,7 @@ lt=&lt;&lt;&lt;-</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>558</x>
-      <y>432</y>
+      <y>414</y>
       <w>324</w>
       <h>36</h>
     </coordinates>
@@ -105,7 +105,7 @@ lt=&lt;.</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>72</x>
-      <y>279</y>
+      <y>261</y>
       <w>369</w>
       <h>162</h>
     </coordinates>
@@ -126,7 +126,7 @@ The System has reported the loan information.
     <id>UMLClass</id>
     <coordinates>
       <x>1359</x>
-      <y>243</y>
+      <y>225</y>
       <w>153</w>
       <h>27</h>
     </coordinates>
@@ -139,7 +139,7 @@ The System has reported the loan information.
     <id>UMLClass</id>
     <coordinates>
       <x>1359</x>
-      <y>423</y>
+      <y>405</y>
       <w>153</w>
       <h>27</h>
     </coordinates>
@@ -152,7 +152,7 @@ The System has reported the loan information.
     <id>Relation</id>
     <coordinates>
       <x>1422</x>
-      <y>261</y>
+      <y>243</y>
       <w>306</w>
       <h>180</h>
     </coordinates>
@@ -168,7 +168,7 @@ The System has reported the loan information.
     <id>UMLClass</id>
     <coordinates>
       <x>1269</x>
-      <y>639</y>
+      <y>621</y>
       <w>153</w>
       <h>27</h>
     </coordinates>
@@ -179,7 +179,7 @@ The System has reported the loan information.
     <id>UMLClass</id>
     <coordinates>
       <x>1467</x>
-      <y>738</y>
+      <y>720</y>
       <w>153</w>
       <h>27</h>
     </coordinates>
@@ -192,7 +192,7 @@ The System has reported the loan information.
     <id>Relation</id>
     <coordinates>
       <x>1332</x>
-      <y>441</y>
+      <y>423</y>
       <w>315</w>
       <h>216</h>
     </coordinates>
@@ -206,7 +206,7 @@ The System has reported the loan information.
     <id>Relation</id>
     <coordinates>
       <x>1422</x>
-      <y>441</y>
+      <y>423</y>
       <w>243</w>
       <h>315</h>
     </coordinates>
@@ -219,7 +219,7 @@ The System has reported the loan information.
     <id>Relation</id>
     <coordinates>
       <x>558</x>
-      <y>360</y>
+      <y>342</y>
       <w>324</w>
       <h>36</h>
     </coordinates>
@@ -231,7 +231,7 @@ lt=&lt;.</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>558</x>
-      <y>216</y>
+      <y>198</y>
       <w>324</w>
       <h>36</h>
     </coordinates>
@@ -243,7 +243,7 @@ lt=&lt;&lt;&lt;-</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>558</x>
-      <y>171</y>
+      <y>153</y>
       <w>324</w>
       <h>36</h>
     </coordinates>
@@ -255,7 +255,7 @@ lt=&lt;&lt;&lt;-</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>900</x>
-      <y>423</y>
+      <y>405</y>
       <w>153</w>
       <h>27</h>
     </coordinates>
@@ -268,7 +268,7 @@ lt=&lt;&lt;&lt;-</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1836</x>
-      <y>423</y>
+      <y>405</y>
       <w>153</w>
       <h>27</h>
     </coordinates>
@@ -281,7 +281,7 @@ lt=&lt;&lt;&lt;-</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1044</x>
-      <y>423</y>
+      <y>405</y>
       <w>333</w>
       <h>36</h>
     </coordinates>
@@ -293,19 +293,20 @@ lt=&lt;&lt;&lt;-</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1503</x>
-      <y>423</y>
+      <y>405</y>
       <w>351</w>
-      <h>36</h>
+      <h>45</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-3.1. f= findCopyBySerialNumber(serialNumber:int)</panel_attributes>
+3.1. f= findLPByBarcode(barcode:int)
+3.2. f= findCopyBySerialNumber(serialNumber:int)</panel_attributes>
     <additional_attributes>370.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>900</x>
-      <y>504</y>
+      <y>486</y>
       <w>153</w>
       <h>27</h>
     </coordinates>
@@ -316,7 +317,7 @@ lt=&lt;&lt;&lt;-</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>900</x>
-      <y>594</y>
+      <y>576</y>
       <w>153</w>
       <h>27</h>
     </coordinates>
@@ -327,7 +328,7 @@ lt=&lt;&lt;&lt;-</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1836</x>
-      <y>522</y>
+      <y>504</y>
       <w>153</w>
       <h>27</h>
     </coordinates>
@@ -338,7 +339,7 @@ lt=&lt;&lt;&lt;-</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1836</x>
-      <y>594</y>
+      <y>603</y>
       <w>153</w>
       <h>27</h>
     </coordinates>
@@ -349,7 +350,7 @@ lt=&lt;&lt;&lt;-</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>954</x>
-      <y>441</y>
+      <y>423</y>
       <w>333</w>
       <h>81</h>
     </coordinates>
@@ -361,7 +362,7 @@ lt=&lt;&lt;&lt;-</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>954</x>
-      <y>522</y>
+      <y>504</y>
       <w>342</w>
       <h>90</h>
     </coordinates>
@@ -373,31 +374,33 @@ lt=&lt;&lt;&lt;-</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1899</x>
-      <y>441</y>
+      <y>423</y>
       <w>315</w>
       <h>99</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-3.1.1. f= findCopyBySerialNumber(serialNumber:int)</panel_attributes>
+3.1.1. f= findLPByBarcode(serialNumber:int)
+3.2.1. f= findCopyBySerialNumber(serialNumber:int)</panel_attributes>
     <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1899</x>
-      <y>540</y>
+      <y>522</y>
       <w>324</w>
-      <h>72</h>
+      <h>99</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-3.1.1.1. f= findCopyBySerialNumber(serialNumber:int)</panel_attributes>
-    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+3.1.1.1. *[i=1..n] barcode = getBarcode(): int
+3.2.1.1. f= findCopyBySerialNumber(serialNumber:int)</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>1836</x>
-      <y>666</y>
+      <y>693</y>
       <w>153</w>
       <h>27</h>
     </coordinates>
@@ -408,19 +411,19 @@ lt=&lt;&lt;&lt;-</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1899</x>
-      <y>612</y>
+      <y>621</y>
       <w>342</w>
-      <h>72</h>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 3.1.1.1.1. *[i=1..n] serialNumber = getSerialNumber(): int</panel_attributes>
-    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>999</x>
-      <y>126</y>
+      <y>108</y>
       <w>378</w>
       <h>36</h>
     </coordinates>
@@ -432,7 +435,7 @@ lt=&lt;&lt;&lt;-</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1359</x>
-      <y>126</y>
+      <y>108</y>
       <w>153</w>
       <h>27</h>
     </coordinates>
@@ -445,7 +448,7 @@ lt=&lt;&lt;&lt;-</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1422</x>
-      <y>144</y>
+      <y>126</y>
       <w>369</w>
       <h>117</h>
     </coordinates>
@@ -457,7 +460,7 @@ lt=&lt;&lt;&lt;-</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>558</x>
-      <y>396</y>
+      <y>378</y>
       <w>324</w>
       <h>36</h>
     </coordinates>
