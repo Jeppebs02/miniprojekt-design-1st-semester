@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.1.1">
-  <zoom_level>8</zoom_level>
+  <zoom_level>11</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>424</x>
-      <y>1040</y>
-      <w>336</w>
-      <h>296</h>
+      <x>616</x>
+      <y>1309</y>
+      <w>462</w>
+      <h>407</h>
     </coordinates>
     <panel_attributes>Loan
 --
@@ -15,7 +15,7 @@
 -borrowDate : String
 -period : int
 -isReturned : boolean
--loanItems: ArrayList&lt;Copy&gt;
+-copy : Copy
 -friend : Friend
 
 --
@@ -24,9 +24,13 @@
 +setBorrowDate(date:String): void
 +setPeriod(daysOfLoan:int): void
 +setIsReturned(isReturned:boolean): void
++setFriend(friend:Friend): boolean
++setCopy(copy:Copy): boolean
 +getLoanNumber(): int
 +getBorrowDate(): String
-+getLendPeriod(): int
++getPeriod(): int
++getFriend(): Friend
++getCopy(): Copy
 +isReturned(): boolean
 +addCopy(copy:Copy): void
 +printLoanInfo(): void</panel_attributes>
@@ -35,10 +39,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>512</x>
-      <y>824</y>
-      <w>184</w>
-      <h>128</h>
+      <x>737</x>
+      <y>1045</y>
+      <w>253</w>
+      <h>176</h>
     </coordinates>
     <panel_attributes>LoanContainer
 --
@@ -56,31 +60,36 @@ _+getInstance(): LoanContainer_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>448</x>
-      <y>648</y>
-      <w>376</w>
-      <h>152</h>
+      <x>649</x>
+      <y>704</y>
+      <w>517</w>
+      <h>286</h>
     </coordinates>
     <panel_attributes>LoanController
 --
 -newLoan :  Loan
 -newFriend : Friend
+-newCopy : Copy
 --
 +&lt;&lt;create&gt;&gt;LoanController()
 +createLoan(borrowDate:String, period:int)
++findLPByBarcode(barcode:int)
 +saveLoan(): booloan
 +findFriendsByPhoneNumber(phoneNumber:int): Friend
 +typeInCopy(serialNumber:int): Copy
-+addFriendToLoan(loanNumber:int, friend:Friend): boolean</panel_attributes>
++setFriend(friend:Friend): void
++setCopy(copy:Copy): void
++findLoanByLoanNumber(loanNumber:int): Loan
++saveLoan(): boolean</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>472</x>
-      <y>352</y>
-      <w>288</w>
-      <h>248</h>
+      <x>682</x>
+      <y>363</y>
+      <w>396</w>
+      <h>209</h>
     </coordinates>
     <panel_attributes>LoanMenu
 --
@@ -89,12 +98,9 @@ _+getInstance(): LoanContainer_
 +start(): void
 -loanMenu(): void
 -writeLoanMenu(): int
--
-+start(): void
--writeLoanMenu(): int
 +createLoanMenu(): void
++searchLoanByLoanNumber(): void
 -getIntegerFromUser(keyboard:Scanner): int
--createFriendController(): FriendController
 
 
 </panel_attributes>
@@ -103,45 +109,45 @@ _+getInstance(): LoanContainer_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>488</x>
-      <y>792</y>
-      <w>24</w>
-      <h>264</h>
+      <x>704</x>
+      <y>979</y>
+      <w>33</w>
+      <h>352</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>10.0;310.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;300.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>584</x>
-      <y>792</y>
-      <w>24</w>
-      <h>48</h>
+      <x>836</x>
+      <y>979</y>
+      <w>33</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>592</x>
-      <y>944</y>
-      <w>24</w>
-      <h>112</h>
+      <x>847</x>
+      <y>1210</y>
+      <w>33</w>
+      <h>121</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=*
 m2=1</panel_attributes>
-    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>976</x>
-      <y>800</y>
-      <w>248</w>
-      <h>152</h>
+      <x>1375</x>
+      <y>979</y>
+      <w>341</w>
+      <h>209</h>
     </coordinates>
     <panel_attributes>LPContainer
 --
@@ -154,16 +160,16 @@ _-iterator : Iterator&lt;LP&gt;_
 _+getInstance(): LPContainer_
 +getIterator(): Iterator&lt;LP&gt;
 +findLPByBarcode(barcode:int): LP
-+findLPBySerialNumber(lp:LP, sn:int): LP</panel_attributes>
++findCopyBySerialNumber(lp:LP, sn:int): LP</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>136</x>
-      <y>792</y>
-      <w>184</w>
-      <h>168</h>
+      <x>220</x>
+      <y>968</y>
+      <w>308</w>
+      <h>231</h>
     </coordinates>
     <panel_attributes>FriendContainer
 --
@@ -174,6 +180,7 @@ _-iterator : Iterator&lt;Friend&gt;_
 -&lt;&lt;create&gt;&gt; FriendContainer()
 +addFriend(f: Friend): Friend
 _+getInstance(): FriendContainer_
++addFriend(): boolean
 +getIterator(): Iterator&lt;Friend&gt;
 +findFriendByName(name:String): Friend
 +findFriendByTlf(tlf:int): Friend
@@ -183,17 +190,17 @@ _+getInstance(): FriendContainer_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>48</x>
-      <y>624</y>
-      <w>376</w>
-      <h>128</h>
+      <x>0</x>
+      <y>737</y>
+      <w>616</w>
+      <h>176</h>
     </coordinates>
     <panel_attributes>FriendController
 --
 -friendContainer: FriendContainer
 --
 +&lt;&lt;create&gt;&gt; FriendController()
-+createFriend(name:String, address:String, postalCode:int, city:String, phone:int): void
++createFriend(name:String, address:String, postalCode:int, city:String, phone:int): Friend
 +saveFriend(newFriend:Friend): boolean
 +findFriendByName(name:String): Friend
 +findFriendByTlf(tlf:int): Friend
@@ -203,10 +210,10 @@ _+getInstance(): FriendContainer_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>872</x>
-      <y>648</y>
-      <w>456</w>
-      <h>136</h>
+      <x>1232</x>
+      <y>770</y>
+      <w>627</w>
+      <h>187</h>
     </coordinates>
     <panel_attributes>LPController
 --
@@ -223,21 +230,21 @@ _+getInstance(): FriendContainer_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>232</x>
-      <y>592</y>
-      <w>24</w>
-      <h>48</h>
+      <x>352</x>
+      <y>594</y>
+      <w>33</w>
+      <h>165</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>232</x>
-      <y>744</y>
-      <w>24</w>
-      <h>64</h>
+      <x>352</x>
+      <y>902</y>
+      <w>33</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
@@ -245,10 +252,10 @@ _+getInstance(): FriendContainer_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1088</x>
-      <y>776</y>
-      <w>24</w>
-      <h>40</h>
+      <x>1529</x>
+      <y>946</y>
+      <w>33</w>
+      <h>55</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;30.0;10.0;10.0</additional_attributes>
@@ -256,10 +263,10 @@ _+getInstance(): FriendContainer_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>40</x>
-      <y>1016</y>
-      <w>336</w>
-      <h>304</h>
+      <x>88</x>
+      <y>1276</y>
+      <w>462</w>
+      <h>418</h>
     </coordinates>
     <panel_attributes>Friend
 --
@@ -287,10 +294,10 @@ _+getInstance(): FriendContainer_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>864</x>
-      <y>1000</y>
-      <w>376</w>
-      <h>288</h>
+      <x>1221</x>
+      <y>1232</y>
+      <w>517</w>
+      <h>418</h>
     </coordinates>
     <panel_attributes>LP
 --
@@ -311,6 +318,7 @@ _+getInstance(): FriendContainer_
 +getTitle(): String
 +getArtist(): String
 +getPublicationDate(): String
++getNumberOfCopies(): int
 +printLPInfo(): void
 +addCopy(): boolean
 +findCopyBySerialNumber(serialNumber:int)
@@ -320,10 +328,10 @@ _+getInstance(): FriendContainer_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
-      <y>952</y>
-      <w>24</w>
-      <h>80</h>
+      <x>418</x>
+      <y>1188</y>
+      <w>33</w>
+      <h>110</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=*
@@ -333,23 +341,23 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1136</x>
-      <y>944</y>
-      <w>24</w>
-      <h>72</h>
+      <x>1595</x>
+      <y>1177</y>
+      <w>33</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=*
 m2=1</panel_attributes>
-    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>80</x>
-      <y>744</y>
-      <w>24</w>
-      <h>288</h>
+      <x>143</x>
+      <y>902</y>
+      <w>33</w>
+      <h>396</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;340.0;10.0;10.0</additional_attributes>
@@ -357,48 +365,49 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>904</x>
-      <y>776</y>
-      <w>24</w>
-      <h>240</h>
+      <x>1276</x>
+      <y>946</y>
+      <w>33</w>
+      <h>308</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>10.0;280.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;260.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>872</x>
-      <y>1344</y>
-      <w>336</w>
-      <h>224</h>
+      <x>1232</x>
+      <y>1727</y>
+      <w>462</w>
+      <h>308</h>
     </coordinates>
     <panel_attributes>Copy
 --
 -serialNumber : int
 -purchaseDate : String
 -purchasePrice : int
--burrowed : boolean
+-borrowed : boolean
 --
 +&lt;&lt;create&gt;&gt; Copy(serialNumber:int, purchaseDate:String, purchasePrice:int)
++setBorrowed(borrowed:boolean): void 
 +setSerialNumber(serialNumber:int): void
 +setPurchaseDate(purchaseDate:String): void
 +setPurchasePrice(purchasePrice:int): void
 +getSerialNumber(): int
 +getPurchaseDate(): String
-+getPurcahsePrice(): int
++getPurchasePrice(): int
++isBorrowed(): boolean
 +printCopyInfo(): void
-+setBurrowed(): void
-+isBorrowed(): boolean</panel_attributes>
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1024</x>
-      <y>1280</y>
-      <w>24</w>
-      <h>80</h>
+      <x>1441</x>
+      <y>1639</y>
+      <w>33</w>
+      <h>110</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
@@ -408,16 +417,16 @@ m2=*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>472</x>
+      <x>682</x>
       <y>0</y>
-      <w>288</w>
-      <h>240</h>
+      <w>396</w>
+      <h>209</h>
     </coordinates>
     <panel_attributes>MainMenu
 --
--LoanMenu: loanMenu
--FriendMenu: FriendMenu
--LPMenu: LPMenu
+-loanMenu: LoanMenu
+-friendsMenu: FriendMenu
+-lpMenu: LPMenu
 --
 +&lt;&lt;create&gt;&gt;MainMenu()
 +start(): void
@@ -430,10 +439,10 @@ m2=*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>960</x>
-      <y>352</y>
-      <w>288</w>
-      <h>248</h>
+      <x>1353</x>
+      <y>363</y>
+      <w>396</w>
+      <h>341</h>
     </coordinates>
     <panel_attributes>LPMenu
 --
@@ -455,10 +464,10 @@ m2=*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>96</x>
-      <y>352</y>
-      <w>288</w>
-      <h>248</h>
+      <x>165</x>
+      <y>363</y>
+      <w>396</w>
+      <h>242</h>
     </coordinates>
     <panel_attributes>FriendsMenu
 --
@@ -480,10 +489,10 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1088</x>
-      <y>592</y>
-      <w>24</w>
-      <h>72</h>
+      <x>1529</x>
+      <y>693</y>
+      <w>33</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
@@ -491,21 +500,21 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>600</x>
-      <y>592</y>
-      <w>24</w>
-      <h>72</h>
+      <x>858</x>
+      <y>561</y>
+      <w>33</w>
+      <h>165</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>624</x>
-      <y>232</y>
-      <w>488</w>
-      <h>136</h>
+      <x>891</x>
+      <y>198</y>
+      <w>671</w>
+      <h>187</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>590.0;150.0;10.0;10.0</additional_attributes>
@@ -513,10 +522,10 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>600</x>
-      <y>232</y>
-      <w>24</w>
-      <h>136</h>
+      <x>858</x>
+      <y>198</y>
+      <w>33</w>
+      <h>187</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
@@ -524,10 +533,10 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>216</x>
-      <y>232</y>
-      <w>392</w>
-      <h>136</h>
+      <x>330</x>
+      <y>198</y>
+      <w>539</w>
+      <h>187</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;150.0;470.0;10.0</additional_attributes>
@@ -535,10 +544,10 @@ m2=*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>856</x>
+      <x>1232</x>
       <y>0</y>
-      <w>288</w>
-      <h>240</h>
+      <w>396</w>
+      <h>176</h>
     </coordinates>
     <panel_attributes>TryMe
 --
@@ -552,34 +561,34 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>752</x>
-      <y>104</y>
-      <w>120</w>
-      <h>24</h>
+      <x>1067</x>
+      <y>143</y>
+      <w>187</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;130.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>816</x>
-      <y>696</y>
-      <w>72</w>
-      <h>24</h>
+      <x>1155</x>
+      <y>770</y>
+      <w>99</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>70.0;70.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>416</x>
-      <y>704</y>
-      <w>48</w>
-      <h>24</h>
+      <x>605</x>
+      <y>781</y>
+      <w>66</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;40.0;10.0</additional_attributes>
+    <additional_attributes>10.0;70.0;40.0;10.0</additional_attributes>
   </element>
 </diagram>
