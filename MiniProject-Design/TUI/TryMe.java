@@ -21,7 +21,7 @@ public class TryMe {
         fc.addFriend(new Friend("Oscar", "UCN2", 9200, "Aalborg", 11112233));
         fc.addFriend(new Friend("Kasper", "UCN3", 9400, "Nørresundby", 21112233));
         fc.addFriend(new Friend("Matias", "Sin brændte bil", 9100, "Aalborg", 12112233));
-        fc.addFriend(new Friend("Jeppe", "Under en bro", 9000, "Aalborg", 33112233));
+        fc.addFriend(new Friend("Jeppe", "Under en bro", 9000, "Nørresundby", 33112233));
         
         lpc.addLP(new LP(1111, "Gammel plade 1", "Gammel Artist 1", "1-1-1924"));
         lpc.addLP(new LP(1222, "Gammel plade 2", "Gammel Artist 2", "1-3-1923"));

@@ -65,11 +65,11 @@ public class LP {
     }
 
     public void printLPInfo() {
-        System.out.println("Barcode: " + barcode);
-        System.out.println("Title: " + title);
-        System.out.println("Artist: " + artist);
-        System.out.println("Publication Date: " + publicationDate);
-        System.out.println("This LP have " + numberOfCopies + " copies");
+        System.out.println("Stregkode: " + barcode);
+        System.out.println("Titl: " + title);
+        System.out.println("kunstner: " + artist);
+        System.out.println("Udgivelses dato: " + publicationDate);
+        System.out.println("Der er " + numberOfCopies + " kopier af LP'en");
     }
 
     //tilføj til systemudviklingsdiagramer
