@@ -57,9 +57,9 @@ public class MainMenu {
     private int writeMainMenu() {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("****** Hovedmenu ******");
-        System.out.println(" (1) Lånermenu");
+        System.out.println(" (1) Ven menu");
         System.out.println(" (2) LP menu");
-        System.out.println(" (3) Udlånsmenu");
+        System.out.println(" (3) Lån menu");
         System.out.println(" (9) Generer testdata");// will generate testdata, delete in final version
         System.out.println(" (0) Afslut programmet");
         System.out.print("\n Vælg:");

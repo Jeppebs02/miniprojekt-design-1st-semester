@@ -13,7 +13,7 @@ public class LoanController {
         
     }
 
-    // Opret et nyt lån og tilføj det til containeren
+    // Opret et nyt lån
     public Loan createLoan(String borrowDate, int period) {
          newLoan = new Loan(borrowDate, period);
         return newLoan;
@@ -21,7 +21,7 @@ public class LoanController {
     
     public Friend findFriendByPhoneNumber(int phoneNumber){
         FriendController fc = new FriendController();
-        newFriend= fc.findFriendByTlf(phoneNumber);
+        newFriend = fc.findFriendByTlf(phoneNumber);
         return newFriend;
     }
     
@@ -31,6 +31,7 @@ public class LoanController {
         return newLP;
     }
     
+    //finder copy fra barcoden på copiens LP og copies serie nummer
     public Copy typeInCopy(int barcode, int serialNumber){
         LPController lpc = new LPController();
         LP newLP = lpc.findLPByBarcode(barcode);
