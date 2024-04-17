@@ -36,6 +36,12 @@ public class LoanController {
         LPController lpc = new LPController();
         LP newLP = lpc.findLPByBarcode(barcode);
         return lpc.findCopyBySerialNumber(newLP, serialNumber);
+        
+    }
+    
+    public boolean addCopyToLoan(Copy copy){
+        return newLoan.addCopy(copy);
+    
     }
 
     // Gem et nyt lån i containeren

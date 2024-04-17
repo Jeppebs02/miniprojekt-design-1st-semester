@@ -117,6 +117,10 @@ public class LoanMenu {
         }
         
         Copy copy = lc.typeInCopy(barcode, serialNumber);
+        
+        // Test zone
+        //add copy to loan
+        lc.addCopyToLoan(copy);
 
         System.out.println("En kopi af ");
         LP lp = lc.findLPByBarcode(barcode);
