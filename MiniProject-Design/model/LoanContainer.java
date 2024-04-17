@@ -27,6 +27,7 @@ public class LoanContainer {
         boolean addedLoan = false;
         if (loan!=null) {
             loans.add(loan);
+            loan.setLoanNumber(loans.indexOf(loan));
             addedLoan = true;
         }
         return addedLoan;

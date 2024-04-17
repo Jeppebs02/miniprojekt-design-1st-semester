@@ -8,11 +8,17 @@ public class Copy {
     private int serialNumber;
     private String purchaseDate;
     private int purchasePrice;
+    private boolean borrowed;
 
     public Copy(int serialNumber, String purchaseDate, int purchasePrice) {
         this.serialNumber = serialNumber;
         this.purchaseDate = purchaseDate;
         this.purchasePrice = purchasePrice;
+        this.borrowed = false;
+    }
+    
+    public void setBorrowed(boolean borrowed){
+        this.borrowed = borrowed;
     }
 
     public void setSerialNumber(int serialNumber) {
@@ -38,11 +44,16 @@ public class Copy {
     public int getPurchasePrice() {
         return purchasePrice;
     }
+    
+    public boolean isBorrowed(){
+        return borrowed;
+    }
 
     public void printCopyInfo() {
-        System.out.println("Serial Number: " + serialNumber);
-        System.out.println("Purchase Date: " + purchaseDate);
-        System.out.println("Purchase Price: " + purchasePrice);
+        System.out.println("Serienummer: " + serialNumber);
+        System.out.println("Købsdato: " + purchaseDate);
+        System.out.println("Købspris: " + purchasePrice);
+        System.out.println("Udlånsstatus: " + borrowed);
     }
     
     
