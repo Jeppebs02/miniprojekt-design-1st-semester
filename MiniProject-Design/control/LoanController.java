@@ -44,6 +44,11 @@ public class LoanController {
     
     }
 
+    public Loan findLoanByLoanNumber(int loanNumber){
+        LoanContainer lc = LoanContainer.getInstance();
+        return lc.findLoanByLoanNumber(loanNumber);
+    }
+    
     // Gem et nyt lån i containeren
     public boolean saveLoan() {
         newLoan.setFriend(newFriend);

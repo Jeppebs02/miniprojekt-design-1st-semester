@@ -27,6 +27,9 @@ public class LoanMenu {
                 case 1:
                     createLoanMenu();
                     break;
+                case 2:
+                    searchLoanByLoanNumber();
+                    break;
                 case 0:
                     running = false;
                     break;
@@ -41,6 +44,7 @@ public class LoanMenu {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("** lån menu **");
         System.out.println(" (1) Opret lån");
+        System.out.println(" (2) Søg lån");
         System.out.println(" (0) Tilbage");
         System.out.print("\n Vælg:");
         int choice = getIntegerFromUser(keyboard);
@@ -132,6 +136,20 @@ public class LoanMenu {
 
     }
 
+    public void searchLoanByLoanNumber(){
+        LoanController lc = new LoanController();
+        
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Skriv venligst lånenummeret");
+        
+        int loanNumber = getIntegerFromUser(keyboard);
+        keyboard.nextLine(); 
+        
+        Loan foundLoan = lc.findLoanByLoanNumber(loanNumber);
+        
+        foundLoan.printLoanInfo();
+    }
+    
     private int getIntegerFromUser(Scanner keyboard) {
         while (!keyboard.hasNextInt()) {
             System.out.println("Input skal være et tal - prøv igen");
