@@ -42,7 +42,7 @@ public class FriendsMenu {
 
     private int writeFriendsMenu() {
         Scanner keyboard = new Scanner(System.in);
-        System.out.println("** Udlånsmenu **");
+        System.out.println("** Udlåner menu **");
         System.out.println(" (1) Opret ven");
         System.out.println(" (2) Søg ven");
         System.out.println(" (3) Vis alle venner");
