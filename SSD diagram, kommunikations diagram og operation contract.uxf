@@ -159,8 +159,9 @@ The System has reported the loan information.
     <panel_attributes>lt=&lt;-
 1.1.1. l = createLoan(borrowDate:String, period:int)
 2 f= findFriendByPhoneNumber(PhoneNumber:int)
-3 c= typeInCopy(serialNumber:int)
-4 s= saveLoan()
+3 flb= findLPByBarcode(barcode:int): LP
+4 c= typeInCopy(serialNumber:int)
+5 s= saveLoan()
 </panel_attributes>
     <additional_attributes>10.0;180.0;10.0;10.0</additional_attributes>
   </element>
