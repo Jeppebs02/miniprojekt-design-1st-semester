@@ -137,8 +137,7 @@ public class TestLoanController
         Friend foundFriend = lc.findFriendByPhoneNumber(44445555);
         
         //Assert
-        assertEquals(null, foundFriend.getName());
-        assertEquals(null, foundFriend.getAddress());
+        assertEquals(null, foundFriend);
     }
     
     @Test
@@ -168,8 +167,7 @@ public class TestLoanController
         LP foundLP = lc.findLPByBarcode(9999);
         
         //Assert
-        assertEquals(null, foundLP.getTitle());
-        assertEquals(null, foundLP.getArtist());
+        assertEquals(null, foundLP);
     }
     
     @Test
@@ -196,9 +194,9 @@ public class TestLoanController
         //fill test data i BeforeAll
         
         //act
-        Copy foundCopy = lc.typeInCopy(9999, 999999);
+        Copy foundCopy = lc.typeInCopy(1111, 999999);
         
         //Assert
-        assertEquals(null, foundCopy.getPurchaseDate());
+        assertEquals(null, foundCopy);
     }
 }
