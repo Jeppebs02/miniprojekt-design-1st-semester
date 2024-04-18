@@ -35,7 +35,7 @@ public class Friend {
         this.city = city;
     }
 
-    public void setPhone(int phone) {
+    public void setPhoneNumber(int phoneNumber) {
         this.phone = phone;
     }
 
