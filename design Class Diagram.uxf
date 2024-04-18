@@ -96,7 +96,7 @@ _+getInstance(): LoanContainer_
 +start(): void
 -loanMenu(): void
 -writeLoanMenu(): int
-+createLoanMenu(): void
++createLoan(): void
 +searchLoanByLoanNumber(): void
 -getIntegerFromUser(keyboard:Scanner): int
 
