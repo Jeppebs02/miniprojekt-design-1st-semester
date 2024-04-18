@@ -36,17 +36,11 @@ public class LoanController {
     public Copy typeInCopy(int barcode, int serialNumber){
         LPController lpc = new LPController();
         LP newLP = lpc.findLPByBarcode(barcode);
+        newCopy=lpc.findCopyBySerialNumber(newLP, serialNumber);
         return lpc.findCopyBySerialNumber(newLP, serialNumber);
         
     }
     
-    public void setFriend(Friend friend){
-     this.newFriend=friend;
-    }
-    
-    public void setCopy(Copy copy){
-        this.newCopy= copy;
-    }
     
     public Loan findLoanByLoanNumber(int loanNumber){
         LoanContainer lc = LoanContainer.getInstance();
@@ -56,7 +50,7 @@ public class LoanController {
     // Gem et nyt lån i containeren
     public boolean saveLoan() {
         newLoan.setFriend(newFriend);
-        newLoan.addCopy(newCopy);
+        newLoan.setCopy(newCopy);
         return LoanContainer.getInstance().addLoan(newLoan);
     }
 }
