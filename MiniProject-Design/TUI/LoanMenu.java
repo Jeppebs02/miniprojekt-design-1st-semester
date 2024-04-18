@@ -121,14 +121,13 @@ public class LoanMenu {
         }
         
         Copy copy = lc.typeInCopy(barcode, serialNumber);
+        copy.setBorrowed(true);
         
         System.out.println("En kopi af ");
         LP lp = lc.findLPByBarcode(barcode);
         lp.printLPInfo();
         System.out.println(" er tilføjet til lånet.");
         
-        lc.setCopy(copy);
-        lc.setFriend(friend);
         lc.saveLoan();
         System.out.println("Dit lån er nu oprettet.");
 
