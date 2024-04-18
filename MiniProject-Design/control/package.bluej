@@ -1,17 +1,17 @@
 #BlueJ package file
-dependency1.from=TestLoanController
-dependency1.to=LoanController
+dependency1.from=LoanController
+dependency1.to=FriendController
 dependency1.type=UsesDependency
-dependency2.from=TestLoanController
-dependency2.to=FriendController
+dependency2.from=LoanController
+dependency2.to=LPController
 dependency2.type=UsesDependency
 dependency3.from=TestLoanController
-dependency3.to=LPController
+dependency3.to=LoanController
 dependency3.type=UsesDependency
-dependency4.from=LoanController
+dependency4.from=TestLoanController
 dependency4.to=FriendController
 dependency4.type=UsesDependency
-dependency5.from=LoanController
+dependency5.from=TestLoanController
 dependency5.to=LPController
 dependency5.type=UsesDependency
 objectbench.height=92

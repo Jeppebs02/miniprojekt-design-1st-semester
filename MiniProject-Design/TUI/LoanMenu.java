@@ -25,7 +25,7 @@ public class LoanMenu {
             int choice = writeLoanMenu();
             switch (choice) {
                 case 1:
-                    createLoanMenu();
+                    createLoan();
                     break;
                 case 2:
                     searchLoanByLoanNumber();
@@ -51,7 +51,7 @@ public class LoanMenu {
         return choice;
     }
 
-    public void createLoanMenu(){
+    public void createLoan(){
         LoanController lc = new LoanController();
         Scanner keyboard = new Scanner(System.in);
         int phoneNumber = 0;
@@ -126,10 +126,10 @@ public class LoanMenu {
         System.out.println("En kopi af ");
         LP lp = lc.findLPByBarcode(barcode);
         lp.printLPInfo();
-        System.out.println(" er tilføjet til lånet.");
+        System.out.println(" er tilføjet til lånet.\n");
         
         lc.saveLoan();
-        System.out.println("Dit lån er nu oprettet.");
+        System.out.println("Dit lån er nu oprettet.\n");
 
     }
 
