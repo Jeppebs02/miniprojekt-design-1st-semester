@@ -31,9 +31,9 @@ public class FriendController {
     }
 
     //Find ven ved tlnr
-    public Friend findFriendByPhone(int phoneNumber){
+    public Friend findFriendByPhoneNumber(int phoneNumber){
         FriendContainer fc = FriendContainer.getInstance();
-        return fc.findFriendByTlf(phoneNumber);
+        return fc.findFriendByPhoneNumber(phoneNumber);
     }
 
     //Print all friends

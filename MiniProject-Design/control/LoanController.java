@@ -22,7 +22,7 @@ public class LoanController {
     
     public Friend findFriendByPhoneNumber(int phoneNumber){
         FriendController fc = new FriendController();
-        newFriend = fc.findFriendByTlf(phoneNumber);
+        newFriend = fc.findFriendByPhoneNumber(phoneNumber);
         return newFriend;
     }
     
