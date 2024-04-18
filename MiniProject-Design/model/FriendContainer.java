@@ -50,7 +50,7 @@ public class FriendContainer {
     public Friend findFriendByPhoneNumber(int phoneNumber){
         Friend foundFriend = null;
         for(Friend friend : friends){
-            if(friend.getPhone()==phoneNumber){
+            if(friend.getPhoneNumber()==phoneNumber){
                 foundFriend=friend;
             } 
         }

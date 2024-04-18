@@ -55,7 +55,7 @@ public class Friend {
         return city;
     }
 
-    public int getPhone() {
+    public int getPhoneNumber() {
         return phone;
     }
 

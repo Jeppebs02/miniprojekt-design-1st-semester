@@ -30,9 +30,9 @@ public class LPController {
         return lpContainer.findLPByBarcode(barcode);
     }
     
-    public Copy findCopyBySerialNumber(LP lp, int sn){
+    public Copy findCopyBySerialNumber(LP lp, int serialNumber){
         LPContainer lpContainer= LPContainer.getInstance();
-        return lpContainer.findCopyBySerialNumber(lp,sn);
+        return lpContainer.findCopyBySerialNumber(lp,serialNumber);
     }
     
     public void createLPCopy(LP lp, int copySerialNumber, String copyPurchaseDate, int copyPurchasePrice){
