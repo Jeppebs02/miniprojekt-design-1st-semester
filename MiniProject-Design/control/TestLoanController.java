@@ -105,7 +105,7 @@ public class TestLoanController
         Loan loan = lc.createLoan("10-10-2010", 5);
         
         //Assert
-        assertNotNull(lc);
+        assertNotNull(loan);
         assertEquals("10-10-2010", loan.getBorrowDate());
         assertEquals(5, loan.getPeriod());
     }
@@ -121,7 +121,7 @@ public class TestLoanController
         Friend foundFriend = lc.findFriendByPhoneNumber(11112233);
         
         //Assert
-        assertNotNull(lc);
+        assertNotNull(foundFriend);
         assertEquals("Oscar", foundFriend.getName());
         assertEquals("UCN2", foundFriend.getAddress());
     }
@@ -151,7 +151,7 @@ public class TestLoanController
         LP foundLP = lc.findLPByBarcode(1333);
         
         //Assert
-        assertNotNull(lc);
+        assertNotNull(foundLP);
         assertEquals("Gammel plade 3", foundLP.getTitle());
         assertEquals("Gammel Artist 3", foundLP.getArtist());
     }
@@ -181,7 +181,7 @@ public class TestLoanController
         Copy foundCopy = lc.typeInCopy(1111, 111111);
         
         //Assert
-        assertNotNull(lc);
+        assertNotNull(foundCopy);
         assertEquals(500, foundCopy.getPurchasePrice());
         assertEquals("20/04/2020", foundCopy.getPurchaseDate());
     }
