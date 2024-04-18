@@ -47,10 +47,10 @@ public class FriendContainer {
         return foundFriend;
     }
 
-    public Friend findFriendByTlf(int tlf){
+    public Friend findFriendByPhoneNumber(int phoneNumber){
         Friend foundFriend = null;
         for(Friend friend : friends){
-            if(friend.getPhone()==tlf){
+            if(friend.getPhone()==phoneNumber){
                 foundFriend=friend;
             } 
         }
