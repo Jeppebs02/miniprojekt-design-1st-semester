@@ -11,7 +11,7 @@ import java.util.Iterator;
  * @version (16/04/2024)
  */
 public class LPMenu {
-    private LPController lpc;
+    
     public LPMenu() {// initialise instance variables
     }
 
@@ -20,7 +20,7 @@ public class LPMenu {
     }
 
     private void lpMenu() {
-        lpc = createLPController();
+        LPController lpc = createLPController();
         Scanner keyboard = new Scanner(System.in);
         boolean running = true;
         while (running) {
@@ -67,7 +67,7 @@ public class LPMenu {
     }
 
     private void createLPMenu(){
-        lpc = createLPController();
+        LPController lpc = createLPController();
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Skriv venligst LP'ens stregkode");
         int barcode = getIntegerFromUser(keyboard);
@@ -83,7 +83,7 @@ public class LPMenu {
     }
 
     private void createCopyMenu(){
-        lpc = createLPController();
+        LPController lpc = createLPController();
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Skriv venligst LP'ens stregkode");
         int barcode = getIntegerFromUser(keyboard);
@@ -103,7 +103,7 @@ public class LPMenu {
     }
     
     private void findLP(){
-        lpc = createLPController();
+        LPController lpc = createLPController();
         Scanner keyboard = new Scanner(System.in);  
         System.out.println("Skriv venligst LP'ens stregkode");
         int barcode = getIntegerFromUser(keyboard);
