@@ -2,4 +2,4 @@
 
 Welcome to our first semester miniproject
 
-Authors: Oscar, Magnus, Kasper, Mathias, (Mads) og Jeppe
+Authors: Oscar, Magnus, Kasper, Mathias, og Jeppe
