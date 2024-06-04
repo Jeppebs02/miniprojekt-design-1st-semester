@@ -93,7 +93,7 @@ public class FriendsMenu {
         System.out.println("Skriv venligst lånerens tlf nr");
         int tlfSearch = getIntegerFromUser(keyboard);
         keyboard.nextLine(); 
-        Friend foundFriend = fc.findFriendByTlf(tlfSearch);
+        Friend foundFriend = fc.findFriendByPhoneNumber(tlfSearch);
         foundFriend.printFriendInfo();            
 
     }
